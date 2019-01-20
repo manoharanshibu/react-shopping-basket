@@ -1,8 +1,8 @@
 const initialState = {
     items: [
-        {name: 'item1', quantity: 10, unitPrice: 2}, 
-        {name: 'item2', quantity: 20, unitPrice: 3}, 
-        {name: 'item3', quantity: 30, unitPrice: 4}]
+        {id: 0, name: 'Mountain Dew', quantity: 2, unitPrice: 1.80}, 
+        {id: 1, name: 'Desperados', quantity: 6, unitPrice: 2.50}, 
+        {id: 2, name: 'Jack Daniels', quantity: 4, unitPrice: 3.50}]
 }
 
 export function reducers ( state=initialState, action ){
