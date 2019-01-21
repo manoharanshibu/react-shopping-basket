@@ -1,11 +1,21 @@
 import React, { PureComponent } from 'react';
+import { quantityChanged, clearAll, removeItem } from '../actions/actions';
+import { connect } from 'react-redux';
 
-export default class ShoppingBasket extends PureComponent {
 
-    onClick(){
+class ShoppingBasket extends PureComponent {
 
+    onChange(id, quanity){
+        this.props.quantityChanged(id, quanity);
     }
 
+    onClear() {
+        this.props.clearAll();
+    }
+
+    onRemove(id) {
+        this.props.removeItem(id);
+    }
 
     getItems(items) {
 
@@ -16,9 +26,9 @@ export default class ShoppingBasket extends PureComponent {
         const basketItems = items.map((item, index) => <div key={index}>
                 <div className="grid-container">
                     <div className="grid-items-namebox">{item.name}</div>
-                    <div className="grid-items-quantity">{item.quantity}</div>
+                    <div className="grid-items-quantity"><input contentEditable type="text" className="input" value={item.quantity} onChange={(event) => this.onChange(item.id, event.currentTarget.value)} /></div>
                     <div className="grid-items-price">${(item.unitPrice * item.quantity).toFixed(2)}</div>
-                    <div className="grid-items-quantity">X</div>
+                    <div className="grid-items-quantity"><a className="link" href="javascript:void(0);" onClick={() => this.onRemove(item.id)}>X</a></div>
                 </div>
                 { index !== items.length-1 && <hr className="hr" /> }
             </div>
@@ -27,8 +37,11 @@ export default class ShoppingBasket extends PureComponent {
         return <div className="container">
                     <div> { basketItems } </div>
                     <div className="summary-box-container">
-                        <div className="summary-box-total">${ total }</div>
-                        <div className="summary-box"><a className="link" href="javascript:void(0);">Clear</a>&nbsp;&nbsp;<button className="button">Check Out ></button></div>
+                        <div className="summary-box-total">${ total.toFixed(2) }</div>
+                        <div className="summary-box">
+                            <a className="link" href="javascript:void(0);" onClick={() => this.onClear()}>Clear</a>&nbsp;&nbsp;
+                            <button className="button">{items.length !== 0 ? 'Check Out >' : 'Start Over'}</button>
+                        </div>
                     </div>
                 </div>;
     }
@@ -39,3 +52,17 @@ export default class ShoppingBasket extends PureComponent {
             </div>
     }
 }
+
+// const mapDispatchToProps = (dispatch) => bindActionCreators(actions, dispatch);
+
+const mapDispatchToProps = (dispatch) => ({
+    quantityChanged: (id, quantity) => dispatch(quantityChanged({id, quantity})),
+    clearAll: () => dispatch(clearAll()),
+    removeItem: (id) => dispatch(removeItem(id))
+});
+  
+  const mapStateToProps = (state) => ({
+    items: state.items
+  })
+  
+  export default connect( mapStateToProps, mapDispatchToProps)(ShoppingBasket);

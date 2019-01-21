@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/reducers/reducers.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/reducers</a> reducers.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/19</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const initialState = <span class="cstat-no" title="statement not covered" >{</span>
+    items: [
+        {id: 0, name: 'Mountain Dew', quantity: 2, unitPrice: 1.80}, 
+        {id: 1, name: 'Desperados', quantity: 6, unitPrice: 2.50}, 
+        {id: 2, name: 'Jack Daniels', quantity: 4, unitPrice: 3.50}]
+}
+&nbsp;
+const updateQuantity = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(i</span>tems, id, quantity)  =&gt;{</span>
+<span class="cstat-no" title="statement not covered" >    return items.map((<span class="fstat-no" title="function not covered" >item) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        if(id === -1){</span>
+<span class="cstat-no" title="statement not covered" >            item.quantity = 0;</span>
+<span class="cstat-no" title="statement not covered" >            return item;</span>
+        }else <span class="cstat-no" title="statement not covered" >if(item.id === id){</span>
+<span class="cstat-no" title="statement not covered" >            item.quantity = quantity;</span>
+<span class="cstat-no" title="statement not covered" >            return item;</span>
+        }else{
+<span class="cstat-no" title="statement not covered" >            return item;</span>
+        }
+    })
+}
+&nbsp;
+const removeItem = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(i</span>tems, id)  =&gt;{</span>
+<span class="cstat-no" title="statement not covered" >    return items.filter((<span class="fstat-no" title="function not covered" >item) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        return id !== item.id</span>
+    })
+}
+&nbsp;
+export function <span class="fstat-no" title="function not covered" >reducers ( state=<span class="branch-0 cbranch-no" title="branch not covered" >initialState, action ){</span></span>
+<span class="cstat-no" title="statement not covered" >    switch(action.type){</span>
+        case 'GET_ITEMS':
+<span class="cstat-no" title="statement not covered" >            return { items: state.items };</span>
+        case 'QUANTITY_CHANGED':
+<span class="cstat-no" title="statement not covered" >            return { items: updateQuantity(state.items, action.payload.id, action.payload.quantity) };</span>
+        case 'CLEAR_ALL':
+<span class="cstat-no" title="statement not covered" >            return { items: updateQuantity(state.items, -1, 0) };</span>
+        case 'REMOVE_ITEM':
+<span class="cstat-no" title="statement not covered" >            return { items: removeItem(state.items, action.payload) };</span>
+        default:
+<span class="cstat-no" title="statement not covered" >            return state;</span>
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 21 2019 01:13:44 GMT+0000 (Greenwich Mean Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

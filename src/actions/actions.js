@@ -4,3 +4,24 @@ export const getItems = (state) => {
         payload: state
     }
 }
+
+export const quantityChanged = (state) => {
+    return {
+        type: 'QUANTITY_CHANGED',
+        payload: state
+    }
+}
+
+export const clearAll = (state) => {
+    return {
+        type: 'CLEAR_ALL',
+        payload: state
+    }
+}
+
+export const removeItem = (state) => {
+    return {
+        type: 'REMOVE_ITEM',
+        payload: state
+    }
+}
