@@ -129,6 +129,15 @@
   width: 100%;
 }
 
+.basket-items {
+  display: block;
+  min-height: 300px;
+}
+
+.basket-empty {
+  padding-top: 150px;
+}
+
 .input {
   width: 20px;
   text-align: center;

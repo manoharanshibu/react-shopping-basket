@@ -35,7 +35,10 @@ class ShoppingBasket extends PureComponent {
             )
         
         return <div className="container">
-                    <div> { basketItems } </div>
+                    <div className="basket-items"> 
+                        { basketItems } 
+                        { basketItems.length === 0 && <div className="basket-empty">Your basket is empty!</div> } 
+                    </div>
                     <div className="summary-box-container">
                         <div className="summary-box-total">${ total.toFixed(2) }</div>
                         <div className="summary-box">
@@ -52,8 +55,6 @@ class ShoppingBasket extends PureComponent {
             </div>
     }
 }
-
-// const mapDispatchToProps = (dispatch) => bindActionCreators(actions, dispatch);
 
 const mapDispatchToProps = (dispatch) => ({
     quantityChanged: (id, quantity) => dispatch(quantityChanged({id, quantity})),
